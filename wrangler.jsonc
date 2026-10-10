@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "workers-starter",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+
+  // Workers Logs: indexes the JSON log lines from src/log.ts.
+  "observability": { "enabled": true },
+
+  // Files in ./public are served straight from Cloudflare's edge; anything
+  // that doesn't match a file falls through to the Worker.
+  "assets": { "directory": "./public" },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "workers-starter-db",
+      // Replace with the id printed by: npx wrangler d1 create workers-starter-db
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  // Non-secret config. Secrets go in `wrangler secret put NAME` (and .dev.vars locally).
+  "vars": {
+    "ENVIRONMENT": "production",
+    "ALLOWED_ORIGINS": "",
+    "MAX_BODY_BYTES": "1000000"
+  }
+}

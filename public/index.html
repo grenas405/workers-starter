@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workers Starter</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main>
+    <h1>Notes</h1>
+    <form id="new-note">
+      <input name="title" placeholder="Title" required maxlength="200">
+      <textarea name="body" placeholder="Body" rows="3" maxlength="10000"></textarea>
+      <button>Add note</button>
+    </form>
+    <p id="status" role="status"></p>
+    <ul id="notes"></ul>
+  </main>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

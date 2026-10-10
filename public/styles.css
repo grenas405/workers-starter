@@ -1,0 +1,9 @@
+:root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+body { margin: 0; padding: 2rem 1rem; }
+main { max-width: 40rem; margin: 0 auto; }
+form { display: grid; gap: 0.5rem; margin-bottom: 1.5rem; }
+input, textarea, button { font: inherit; padding: 0.5rem; }
+ul { list-style: none; padding: 0; display: grid; gap: 0.75rem; }
+li { border: 1px solid #8884; border-radius: 6px; padding: 0.75rem; }
+li p { margin: 0.25rem 0 0.5rem; white-space: pre-wrap; }
+#status { color: #c33; }
