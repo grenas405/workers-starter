@@ -41,11 +41,13 @@ npm run dev                      # http://localhost:8787
 
 ```sh
 npx wrangler login
-npx wrangler d1 create workers-starter-db   # paste the id into wrangler.jsonc
-npm run cf-typegen                          # regenerate types after config changes
-npm run db:migrate:remote
-npm run deploy
+npm run deploy    # creates the D1 database on first deploy, then applies migrations
 ```
+
+The D1 database is found by `database_name`, so no `database_id` is needed in
+`wrangler.jsonc`. With Cloudflare's Git integration (Workers Builds), set the
+deploy command to `npm run deploy` so migrations run on every deploy.
+Run `npm run cf-typegen` after config changes to regenerate types.
 
 Set real secrets with `npx wrangler secret put NAME` (and in `.dev.vars` locally).
 Never put secrets in `vars`.

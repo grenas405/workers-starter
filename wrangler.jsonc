@@ -15,8 +15,8 @@
     {
       "binding": "DB",
       "database_name": "workers-starter-db",
-      // Replace with the id printed by: npx wrangler d1 create workers-starter-db
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      // No database_id: `wrangler deploy` finds the database by name, or creates
+      // it on the first deploy. Add the id here later if you want it pinned.
       "migrations_dir": "migrations"
     }
   ],
